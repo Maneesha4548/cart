@@ -8,6 +8,16 @@ from FarMeKart.models import Vegpro,User,Cart
 import sys
 
 # Create your views here.
+
+
+
+
+
+
+def remove(request,id):
+	c=Cart.objects.get(id=id)
+	c.delete()
+	return redirect('/cartdetails')
 def veg(re):
 	i = Vegpro.objects.filter(a_id=re.user.id)
 	s = Vegpro.objects.all()
